@@ -590,8 +590,19 @@
                                         <div class="overflow-hidden rounded-lg shadow-lg ring-1 ring-black ring-opacity-5">
                                             <div class="relative grid gap-6 px-5 py-6 bg-white sm:gap-8 sm:p-8">
                                                 <!-- Render each sublink -->
-                                                <!-- <each loop="link in [{&#x27;title&#x27;: &#x27;Our Best Work&#x27;, &#x27;copy&#x27;: &#x27;Flooring&#x27;, &#x27;href&#x27;: &#x27;gallery-Flooring&#x27;}, {&#x27;title&#x27;: &#x27;Our Best Work&#x27;, &#x27;copy&#x27;: &#x27;Stairs&#x27;, &#x27;href&#x27;: &#x27;gallery-Stairs&#x27;}, {&#x27;title&#x27;: &#x27;Our Best Work&#x27;, &#x27;copy&#x27;: &#x27;Remodeling&#x27;, &#x27;href&#x27;: &#x27;gallery-Remodeling&#x27;}, {&#x27;title&#x27;: &#x27;All Photos&#x27;, &#x27;copy&#x27;: &#x27;All Photos&#x27;, &#x27;href&#x27;: &#x27;gallery-All&#x27;}]"> -->
+                                                <!-- <each loop="link in [{&#x27;title&#x27;: &#x27;Our Best Work&#x27;, &#x27;copy&#x27;: &#x27;Remodeling&#x27;, &#x27;href&#x27;: &#x27;gallery-Remodeling&#x27;}, {&#x27;title&#x27;: &#x27;Our Best Work&#x27;, &#x27;copy&#x27;: &#x27;Flooring&#x27;, &#x27;href&#x27;: &#x27;gallery-Flooring&#x27;}, {&#x27;title&#x27;: &#x27;Our Best Work&#x27;, &#x27;copy&#x27;: &#x27;Stairs&#x27;, &#x27;href&#x27;: &#x27;gallery-Stairs&#x27;}, {&#x27;title&#x27;: &#x27;All Photos&#x27;, &#x27;copy&#x27;: &#x27;All Photos&#x27;, &#x27;href&#x27;: &#x27;gallery-All&#x27;}]"> -->
                                                   
+                                                    <a
+                                                        href=" gallery-Remodeling "
+                                                        role="menuitem"
+                                                        class="block p-3 -m-3 transition rounded-md  focus:outline-none focus:ring-2 ring-primary ring-opacity-75 ring-offset-2 hover:bg-gray-50"
+                                                    >
+                                                        <!-- <p class="text-base font-medium text-gray-900">Our Best Work</p> -->
+                                                        <p class="mt-1 text-sm text-gray-500">Remodeling</p>
+                                                    </a>
+                                                <!-- </each> -->
+                                               <!--  -->
+                                                 
                                                     <a
                                                         href=" gallery-Flooring "
                                                         role="menuitem"
@@ -610,17 +621,6 @@
                                                     >
                                                         <!-- <p class="text-base font-medium text-gray-900">Our Best Work</p> -->
                                                         <p class="mt-1 text-sm text-gray-500">Stairs</p>
-                                                    </a>
-                                                <!-- </each> -->
-                                               <!--  -->
-                                                 
-                                                    <a
-                                                        href=" gallery-Remodeling "
-                                                        role="menuitem"
-                                                        class="block p-3 -m-3 transition rounded-md  focus:outline-none focus:ring-2 ring-primary ring-opacity-75 ring-offset-2 hover:bg-gray-50"
-                                                    >
-                                                        <!-- <p class="text-base font-medium text-gray-900">Our Best Work</p> -->
-                                                        <p class="mt-1 text-sm text-gray-500">Remodeling</p>
                                                     </a>
                                                 <!-- </each> -->
                                                <!--  -->
@@ -895,6 +895,12 @@
                                         <div class="relative grid gap-6 px-5 py-2 bg-white rounded-lg">
                                             <!-- Render each sublink -->
                                             
+                                                <a href="gallery-Remodeling" role="menuitem" class="block p-3 -m-3 transition rounded-md">
+                                                    <!-- <p class="text-base font-medium text-gray-900">Our Best Work</p> -->
+                                                    <p class="mt-1 text-sm text-gray-500">Remodeling</p>
+                                                </a>
+                                            <!-- </each> -->
+                                            
                                                 <a href="gallery-Flooring" role="menuitem" class="block p-3 -m-3 transition rounded-md">
                                                     <!-- <p class="text-base font-medium text-gray-900">Our Best Work</p> -->
                                                     <p class="mt-1 text-sm text-gray-500">Flooring</p>
@@ -904,12 +910,6 @@
                                                 <a href="gallery-Stairs" role="menuitem" class="block p-3 -m-3 transition rounded-md">
                                                     <!-- <p class="text-base font-medium text-gray-900">Our Best Work</p> -->
                                                     <p class="mt-1 text-sm text-gray-500">Stairs</p>
-                                                </a>
-                                            <!-- </each> -->
-                                            
-                                                <a href="gallery-Remodeling" role="menuitem" class="block p-3 -m-3 transition rounded-md">
-                                                    <!-- <p class="text-base font-medium text-gray-900">Our Best Work</p> -->
-                                                    <p class="mt-1 text-sm text-gray-500">Remodeling</p>
                                                 </a>
                                             <!-- </each> -->
                                             
@@ -996,6 +996,8 @@
 
 
 
+
+
 <!-- Our Best Work Component -->
 <section class="overflow-hidden bg-white">
     <div class="relative px-4 py-12 mx-auto max-w-7xl sm:px-6 lg:py-24 lg:px-8">
@@ -1029,7 +1031,7 @@
 <div
     x-data="{
         activeImage: 0,
-        amountOfImages: 6,
+        amountOfImages: 9,
         next() {
             if (this.activeImage < this.amountOfImages - 1)
                 this.activeImage ++;
@@ -1092,6 +1094,68 @@
                 <div x-show="shown" x-transition:enter="transition duration-1000" x-transition:enter-start="transform translate-y-20" x-transition:enter-end="transform translate-y-0">
                     <button @click="activeImage = 2; galleryModalOpen = true" class="block w-full h-full space-y-4 text-left rounded focus:outline-none focus-visible:ring ring-primary ring-offset-2 ring-opacity-75">
                         <div class="aspect-w-3 aspect-h-2">
+                            <!-- <img class="object-cover rounded-lg shadow-lg" src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/684x480/media/d23dec59-9c0c-4e6c-9342-c3b5f8aa58b1.png" alt="" /> -->
+                             
+                                <img class="object-cover rounded-lg shadow-lg" src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/media/d23dec59-9c0c-4e6c-9342-c3b5f8aa58b1.png" alt="Stairs for Goochs Custom Wood Flooring, LLC in St. Augustine, FL" loading="lazy"/> 
+                                <!-- <img class="object-cover rounded-lg shadow-lg" src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/684x480/media/d23dec59-9c0c-4e6c-9342-c3b5f8aa58b1.png" alt="" /> -->
+                                <!-- <img class="object-cover rounded-lg shadow-lg" src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/x/media/d23dec59-9c0c-4e6c-9342-c3b5f8aa58b1.png" alt="" /> -->
+                            
+                        </div>
+
+                        <div class="space-y-1 text-lg font-medium leading-6">
+                            <p class="line-clamp-3"></p>
+                            <h3 class="text-primary"></h3>
+                        </div>
+                    </button>
+                </div>
+            </li>
+        
+            <!-- Single Item - We only want to show 3 items on mobile so we check the current index and attach a hidden class if necessary -->
+            <li x-cloak x-data="{ shown: false }" x-intersect.full="shown = true" class=" block ">
+                <div x-show="shown" x-transition:enter="transition duration-1000" x-transition:enter-start="transform translate-y-20" x-transition:enter-end="transform translate-y-0">
+                    <button @click="activeImage = 3; galleryModalOpen = true" class="block w-full h-full space-y-4 text-left rounded focus:outline-none focus-visible:ring ring-primary ring-offset-2 ring-opacity-75">
+                        <div class="aspect-w-3 aspect-h-2">
+                            <!-- <img class="object-cover rounded-lg shadow-lg" src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/684x480/media/14a9d9c3-ec98-40bf-a7cc-c237bbebd5b6.undefined" alt="" /> -->
+                            
+                                <video preload="metadata" class="rounded shadow-md object-contain w-full h-60" loading="lazy" controls> <source src="https://landing-page-app-hero-images.s3.amazonaws.com/media/14a9d9c3-ec98-40bf-a7cc-c237bbebd5b6.undefined#t=0.5" >
+                                </video>
+                            
+                        </div>
+
+                        <div class="space-y-1 text-lg font-medium leading-6">
+                            <p class="line-clamp-3"></p>
+                            <h3 class="text-primary"></h3>
+                        </div>
+                    </button>
+                </div>
+            </li>
+        
+            <!-- Single Item - We only want to show 3 items on mobile so we check the current index and attach a hidden class if necessary -->
+            <li x-cloak x-data="{ shown: false }" x-intersect.full="shown = true" class=" block ">
+                <div x-show="shown" x-transition:enter="transition duration-1000" x-transition:enter-start="transform translate-y-20" x-transition:enter-end="transform translate-y-0">
+                    <button @click="activeImage = 4; galleryModalOpen = true" class="block w-full h-full space-y-4 text-left rounded focus:outline-none focus-visible:ring ring-primary ring-offset-2 ring-opacity-75">
+                        <div class="aspect-w-3 aspect-h-2">
+                            <!-- <img class="object-cover rounded-lg shadow-lg" src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/684x480/media/d39eefb0-1b4a-46b1-8717-a8cc007b5e84.png" alt="" /> -->
+                             
+                                <img class="object-cover rounded-lg shadow-lg" src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/media/d39eefb0-1b4a-46b1-8717-a8cc007b5e84.png" alt="Stairs for Goochs Custom Wood Flooring, LLC in St. Augustine, FL" loading="lazy"/> 
+                                <!-- <img class="object-cover rounded-lg shadow-lg" src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/684x480/media/d39eefb0-1b4a-46b1-8717-a8cc007b5e84.png" alt="" /> -->
+                                <!-- <img class="object-cover rounded-lg shadow-lg" src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/x/media/d39eefb0-1b4a-46b1-8717-a8cc007b5e84.png" alt="" /> -->
+                            
+                        </div>
+
+                        <div class="space-y-1 text-lg font-medium leading-6">
+                            <p class="line-clamp-3"></p>
+                            <h3 class="text-primary"></h3>
+                        </div>
+                    </button>
+                </div>
+            </li>
+        
+            <!-- Single Item - We only want to show 3 items on mobile so we check the current index and attach a hidden class if necessary -->
+            <li x-cloak x-data="{ shown: false }" x-intersect.full="shown = true" class=" block ">
+                <div x-show="shown" x-transition:enter="transition duration-1000" x-transition:enter-start="transform translate-y-20" x-transition:enter-end="transform translate-y-0">
+                    <button @click="activeImage = 5; galleryModalOpen = true" class="block w-full h-full space-y-4 text-left rounded focus:outline-none focus-visible:ring ring-primary ring-offset-2 ring-opacity-75">
+                        <div class="aspect-w-3 aspect-h-2">
                             <!-- <img class="object-cover rounded-lg shadow-lg" src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/684x480/media/aaea739d-a058-45a6-a3b0-e3592e95f876.jpeg" alt="" /> -->
                              
                                 <img class="object-cover rounded-lg shadow-lg" src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/media/aaea739d-a058-45a6-a3b0-e3592e95f876.jpeg" alt="Stairs for Goochs Custom Wood Flooring, LLC in St. Augustine, FL" loading="lazy"/> 
@@ -1111,7 +1175,7 @@
             <!-- Single Item - We only want to show 3 items on mobile so we check the current index and attach a hidden class if necessary -->
             <li x-cloak x-data="{ shown: false }" x-intersect.full="shown = true" class=" block ">
                 <div x-show="shown" x-transition:enter="transition duration-1000" x-transition:enter-start="transform translate-y-20" x-transition:enter-end="transform translate-y-0">
-                    <button @click="activeImage = 3; galleryModalOpen = true" class="block w-full h-full space-y-4 text-left rounded focus:outline-none focus-visible:ring ring-primary ring-offset-2 ring-opacity-75">
+                    <button @click="activeImage = 6; galleryModalOpen = true" class="block w-full h-full space-y-4 text-left rounded focus:outline-none focus-visible:ring ring-primary ring-offset-2 ring-opacity-75">
                         <div class="aspect-w-3 aspect-h-2">
                             <!-- <img class="object-cover rounded-lg shadow-lg" src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/684x480/media/985aacc5-615f-44a3-a476-528d9e7bceee.jpeg" alt="" /> -->
                              
@@ -1132,7 +1196,7 @@
             <!-- Single Item - We only want to show 3 items on mobile so we check the current index and attach a hidden class if necessary -->
             <li x-cloak x-data="{ shown: false }" x-intersect.full="shown = true" class=" block ">
                 <div x-show="shown" x-transition:enter="transition duration-1000" x-transition:enter-start="transform translate-y-20" x-transition:enter-end="transform translate-y-0">
-                    <button @click="activeImage = 4; galleryModalOpen = true" class="block w-full h-full space-y-4 text-left rounded focus:outline-none focus-visible:ring ring-primary ring-offset-2 ring-opacity-75">
+                    <button @click="activeImage = 7; galleryModalOpen = true" class="block w-full h-full space-y-4 text-left rounded focus:outline-none focus-visible:ring ring-primary ring-offset-2 ring-opacity-75">
                         <div class="aspect-w-3 aspect-h-2">
                             <!-- <img class="object-cover rounded-lg shadow-lg" src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/684x480/media/cfc64520-a6ff-499e-914d-a9b7779e928b.jpeg" alt="" /> -->
                              
@@ -1153,7 +1217,7 @@
             <!-- Single Item - We only want to show 3 items on mobile so we check the current index and attach a hidden class if necessary -->
             <li x-cloak x-data="{ shown: false }" x-intersect.full="shown = true" class=" block ">
                 <div x-show="shown" x-transition:enter="transition duration-1000" x-transition:enter-start="transform translate-y-20" x-transition:enter-end="transform translate-y-0">
-                    <button @click="activeImage = 5; galleryModalOpen = true" class="block w-full h-full space-y-4 text-left rounded focus:outline-none focus-visible:ring ring-primary ring-offset-2 ring-opacity-75">
+                    <button @click="activeImage = 8; galleryModalOpen = true" class="block w-full h-full space-y-4 text-left rounded focus:outline-none focus-visible:ring ring-primary ring-offset-2 ring-opacity-75">
                         <div class="aspect-w-3 aspect-h-2">
                             <!-- <img class="object-cover rounded-lg shadow-lg" src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/684x480/media/3cfbd86a-8356-40c4-b330-86fcdec19eb3.jpeg" alt="" /> -->
                              
@@ -1238,15 +1302,16 @@
                                     <!-- Transition Wrapper 1 -->
                                     <li class="flex flex-col" x-show="activeImage === 2">
                                             
-                                            <img class="mt-2 lg:h-[481px] h-[200px] sm:h-[300px] self-center rounded-md object-cover"  src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/684x480/media/aaea739d-a058-45a6-a3b0-e3592e95f876.jpeg" alt="Stairs for Goochs Custom Wood Flooring, LLC in St. Augustine, FL" loading="lazy"/>
+                                            <img class="mt-2 lg:h-[481px] h-[200px] sm:h-[300px] self-center rounded-md object-cover"  src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/684x480/media/d23dec59-9c0c-4e6c-9342-c3b5f8aa58b1.png" alt="Stairs for Goochs Custom Wood Flooring, LLC in St. Augustine, FL" loading="lazy"/>
                                             <p lorem="1" class="mt-3 text-gray-500"></p>
                                         
                                     </li>
                                 
                                     <!-- Transition Wrapper 1 -->
                                     <li class="flex flex-col" x-show="activeImage === 3">
-                                            
-                                            <img class="mt-2 lg:h-[481px] h-[200px] sm:h-[300px] self-center rounded-md object-cover"  src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/684x480/media/985aacc5-615f-44a3-a476-528d9e7bceee.jpeg" alt="Stairs for Goochs Custom Wood Flooring, LLC in St. Augustine, FL" loading="lazy"/>
+                                        
+                                            <video preload="metadata" class="rounded shadow-md object-contain w-full h-60" loading="lazy" controls> <source src="https://landing-page-app-hero-images.s3.amazonaws.com/media/14a9d9c3-ec98-40bf-a7cc-c237bbebd5b6.undefined#t=0.5" >
+                                            </video>
                                             <p lorem="1" class="mt-3 text-gray-500"></p>
                                         
                                     </li>
@@ -1254,13 +1319,37 @@
                                     <!-- Transition Wrapper 1 -->
                                     <li class="flex flex-col" x-show="activeImage === 4">
                                             
-                                            <img class="mt-2 lg:h-[481px] h-[200px] sm:h-[300px] self-center rounded-md object-cover"  src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/684x480/media/cfc64520-a6ff-499e-914d-a9b7779e928b.jpeg" alt="Stairs for Goochs Custom Wood Flooring, LLC in St. Augustine, FL" loading="lazy"/>
+                                            <img class="mt-2 lg:h-[481px] h-[200px] sm:h-[300px] self-center rounded-md object-cover"  src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/684x480/media/d39eefb0-1b4a-46b1-8717-a8cc007b5e84.png" alt="Stairs for Goochs Custom Wood Flooring, LLC in St. Augustine, FL" loading="lazy"/>
                                             <p lorem="1" class="mt-3 text-gray-500"></p>
                                         
                                     </li>
                                 
                                     <!-- Transition Wrapper 1 -->
                                     <li class="flex flex-col" x-show="activeImage === 5">
+                                            
+                                            <img class="mt-2 lg:h-[481px] h-[200px] sm:h-[300px] self-center rounded-md object-cover"  src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/684x480/media/aaea739d-a058-45a6-a3b0-e3592e95f876.jpeg" alt="Stairs for Goochs Custom Wood Flooring, LLC in St. Augustine, FL" loading="lazy"/>
+                                            <p lorem="1" class="mt-3 text-gray-500"></p>
+                                        
+                                    </li>
+                                
+                                    <!-- Transition Wrapper 1 -->
+                                    <li class="flex flex-col" x-show="activeImage === 6">
+                                            
+                                            <img class="mt-2 lg:h-[481px] h-[200px] sm:h-[300px] self-center rounded-md object-cover"  src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/684x480/media/985aacc5-615f-44a3-a476-528d9e7bceee.jpeg" alt="Stairs for Goochs Custom Wood Flooring, LLC in St. Augustine, FL" loading="lazy"/>
+                                            <p lorem="1" class="mt-3 text-gray-500"></p>
+                                        
+                                    </li>
+                                
+                                    <!-- Transition Wrapper 1 -->
+                                    <li class="flex flex-col" x-show="activeImage === 7">
+                                            
+                                            <img class="mt-2 lg:h-[481px] h-[200px] sm:h-[300px] self-center rounded-md object-cover"  src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/684x480/media/cfc64520-a6ff-499e-914d-a9b7779e928b.jpeg" alt="Stairs for Goochs Custom Wood Flooring, LLC in St. Augustine, FL" loading="lazy"/>
+                                            <p lorem="1" class="mt-3 text-gray-500"></p>
+                                        
+                                    </li>
+                                
+                                    <!-- Transition Wrapper 1 -->
+                                    <li class="flex flex-col" x-show="activeImage === 8">
                                             
                                             <img class="mt-2 lg:h-[481px] h-[200px] sm:h-[300px] self-center rounded-md object-cover"  src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/684x480/media/3cfbd86a-8356-40c4-b330-86fcdec19eb3.jpeg" alt="Stairs for Goochs Custom Wood Flooring, LLC in St. Augustine, FL" loading="lazy"/>
                                             <p lorem="1" class="mt-3 text-gray-500"></p>
@@ -1286,8 +1375,6 @@
         </div>
     </div>
 </section>
-
-
 
 
 
@@ -1728,57 +1815,57 @@
                                         
                                         <div class="flex items-center">
                                             <input
-                                                    id="contact-service-190518"
-                                                    name="190518"
+                                                    id="contact-service-215748"
+                                                    name="215748"
                                                     type="checkbox"
                                                     class="w-4 h-4 border-gray-300 rounded text-primary focus:ring-primary"
                                                     value="Flooring Installation"
                                             />
-                                            <label for="contact-label-service-190518" class="ml-3 text-sm font-medium text-gray-700">Flooring Installation</label>
+                                            <label for="contact-label-service-215748" class="ml-3 text-sm font-medium text-gray-700">Flooring Installation</label>
                                         </div>
                                         
                                         <div class="flex items-center">
                                             <input
-                                                    id="contact-service-190519"
-                                                    name="190519"
+                                                    id="contact-service-215749"
+                                                    name="215749"
                                                     type="checkbox"
                                                     class="w-4 h-4 border-gray-300 rounded text-primary focus:ring-primary"
                                                     value="Wood Flooring Repair"
                                             />
-                                            <label for="contact-label-service-190519" class="ml-3 text-sm font-medium text-gray-700">Wood Flooring Repair</label>
+                                            <label for="contact-label-service-215749" class="ml-3 text-sm font-medium text-gray-700">Wood Flooring Repair</label>
                                         </div>
                                         
                                         <div class="flex items-center">
                                             <input
-                                                    id="contact-service-190520"
-                                                    name="190520"
+                                                    id="contact-service-215750"
+                                                    name="215750"
                                                     type="checkbox"
                                                     class="w-4 h-4 border-gray-300 rounded text-primary focus:ring-primary"
                                                     value="Board Replacement"
                                             />
-                                            <label for="contact-label-service-190520" class="ml-3 text-sm font-medium text-gray-700">Board Replacement</label>
+                                            <label for="contact-label-service-215750" class="ml-3 text-sm font-medium text-gray-700">Board Replacement</label>
                                         </div>
                                         
                                         <div class="flex items-center">
                                             <input
-                                                    id="contact-service-190521"
-                                                    name="190521"
+                                                    id="contact-service-215751"
+                                                    name="215751"
                                                     type="checkbox"
                                                     class="w-4 h-4 border-gray-300 rounded text-primary focus:ring-primary"
                                                     value="Stair Rebuilding and Repair"
                                             />
-                                            <label for="contact-label-service-190521" class="ml-3 text-sm font-medium text-gray-700">Stair Rebuilding and Repair</label>
+                                            <label for="contact-label-service-215751" class="ml-3 text-sm font-medium text-gray-700">Stair Rebuilding and Repair</label>
                                         </div>
                                         
                                         <div class="flex items-center">
                                             <input
-                                                    id="contact-service-190522"
-                                                    name="190522"
+                                                    id="contact-service-215752"
+                                                    name="215752"
                                                     type="checkbox"
                                                     class="w-4 h-4 border-gray-300 rounded text-primary focus:ring-primary"
                                                     value="Bathroom Remodeling & Tile Work"
                                             />
-                                            <label for="contact-label-service-190522" class="ml-3 text-sm font-medium text-gray-700">Bathroom Remodeling & Tile Work</label>
+                                            <label for="contact-label-service-215752" class="ml-3 text-sm font-medium text-gray-700">Bathroom Remodeling & Tile Work</label>
                                         </div>
                                         
                                     </div>
@@ -1809,57 +1896,57 @@
                                         
                                         <div class="flex items-center">
                                             <input
-                                                    id="contact-service-190518"
-                                                    name="190518"
+                                                    id="contact-service-215748"
+                                                    name="215748"
                                                     type="checkbox"
                                                     class="w-4 h-4 border-gray-300 rounded text-primary focus:ring-primary"
                                                     value="Flooring Installation"
                                             />
-                                            <label for="contact-label-service-190518" class="ml-3 text-sm font-medium text-gray-700">Flooring Installation</label>
+                                            <label for="contact-label-service-215748" class="ml-3 text-sm font-medium text-gray-700">Flooring Installation</label>
                                         </div>
                                         
                                         <div class="flex items-center">
                                             <input
-                                                    id="contact-service-190519"
-                                                    name="190519"
+                                                    id="contact-service-215749"
+                                                    name="215749"
                                                     type="checkbox"
                                                     class="w-4 h-4 border-gray-300 rounded text-primary focus:ring-primary"
                                                     value="Wood Flooring Repair"
                                             />
-                                            <label for="contact-label-service-190519" class="ml-3 text-sm font-medium text-gray-700">Wood Flooring Repair</label>
+                                            <label for="contact-label-service-215749" class="ml-3 text-sm font-medium text-gray-700">Wood Flooring Repair</label>
                                         </div>
                                         
                                         <div class="flex items-center">
                                             <input
-                                                    id="contact-service-190520"
-                                                    name="190520"
+                                                    id="contact-service-215750"
+                                                    name="215750"
                                                     type="checkbox"
                                                     class="w-4 h-4 border-gray-300 rounded text-primary focus:ring-primary"
                                                     value="Board Replacement"
                                             />
-                                            <label for="contact-label-service-190520" class="ml-3 text-sm font-medium text-gray-700">Board Replacement</label>
+                                            <label for="contact-label-service-215750" class="ml-3 text-sm font-medium text-gray-700">Board Replacement</label>
                                         </div>
                                         
                                         <div class="flex items-center">
                                             <input
-                                                    id="contact-service-190521"
-                                                    name="190521"
+                                                    id="contact-service-215751"
+                                                    name="215751"
                                                     type="checkbox"
                                                     class="w-4 h-4 border-gray-300 rounded text-primary focus:ring-primary"
                                                     value="Stair Rebuilding and Repair"
                                             />
-                                            <label for="contact-label-service-190521" class="ml-3 text-sm font-medium text-gray-700">Stair Rebuilding and Repair</label>
+                                            <label for="contact-label-service-215751" class="ml-3 text-sm font-medium text-gray-700">Stair Rebuilding and Repair</label>
                                         </div>
                                         
                                         <div class="flex items-center">
                                             <input
-                                                    id="contact-service-190522"
-                                                    name="190522"
+                                                    id="contact-service-215752"
+                                                    name="215752"
                                                     type="checkbox"
                                                     class="w-4 h-4 border-gray-300 rounded text-primary focus:ring-primary"
                                                     value="Bathroom Remodeling & Tile Work"
                                             />
-                                            <label for="contact-label-service-190522" class="ml-3 text-sm font-medium text-gray-700">Bathroom Remodeling & Tile Work</label>
+                                            <label for="contact-label-service-215752" class="ml-3 text-sm font-medium text-gray-700">Bathroom Remodeling & Tile Work</label>
                                         </div>
                                         
                                     </div>
@@ -1990,7 +2077,7 @@
                     <!-- Google Link -->
                     
                     <li>
-                        <a target="_blank" rel="noopener noreferrer" href="https://https://goo.gl/maps/FWinBueqMQVWi5YT6" class="inline-flex w-full px-5 py-2.5 text-sm font-medium transition border-2 border-transparent rounded-md bg-primary text-primary-foreground focus:outline-none hover:bg-primary-darker focus:ring-2 ring-primary ring-opacity-75 ring-offset-2">Leave a Review</a>
+                        <a target="_blank" rel="noopener noreferrer" href="https://g.page/r/CW46g6l6KZZ-EAo/review" class="inline-flex w-full px-5 py-2.5 text-sm font-medium transition border-2 border-transparent rounded-md bg-primary text-primary-foreground focus:outline-none hover:bg-primary-darker focus:ring-2 ring-primary ring-opacity-75 ring-offset-2">Leave a Review</a>
                     </li>
                     
                     <!-- Facebook Link -->
